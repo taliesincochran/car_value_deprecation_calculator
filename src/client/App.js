@@ -1,24 +1,58 @@
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
-import './app.css';
-import ReactImage from './react.png';
+import axios from 'axios';
 
+import './app.css';
+
+const myHeaders = new Headers();
+myHeaders.append('Content-Type', 'json');
+
+/**
+ * @class App
+ * @constructor
+ * @params {any} props
+ * @properties {string []} makes
+ * @properties {string} currentDate
+ * @properties {string} modelYear
+ * @properties {string []} models
+ * @properties {number} mileage
+ * @properties {number} colisions
+ * @properties {number} numberOfOwners
+ */
 export default class App extends Component {
-  state = { 
-    
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      makes: ['placeholder'],
+      currentDate: undefined,
+      modelYear: undefined,
+      models: [],
+      year: undefined,
+      colisions: 0,
+      numberOfOwners: 1,
+      mileage: 0,
+    };
+  }
+  /**
+   * Fetch all the makes when component mounts
+   */
 
   componentDidMount() {
-    fetch('/api/makes')
-      .then(res => res.json())
-      .then(user => this.setState({ username: user.username }));
+    axios.get('/api/makes')
+      .then((res) => {
+        console.log(res);
+        this.setState({ makes: res.data });
+      }).catch((error) => {
+        console.log(error);
+        this.setState({ makes: [] });
+      });
   }
 
   render() {
-    const { username } = this.state;
+    const { makes } = this.state;
     return (
       <div>
-        {username ? <h1>{`Hello ${username}`}</h1> : <h1>Loading.. please wait!</h1>}
-        <img src={ReactImage} alt="react" />
+        {makes.map(make => <p key={make}>{ make }</p>)}
       </div>
     );
   }

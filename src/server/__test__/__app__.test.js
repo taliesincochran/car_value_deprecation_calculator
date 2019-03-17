@@ -21,7 +21,7 @@ describe('Test the "makes" path', () => {
   test('It should respond to the GET method', async () => {
     const response = await request(app).get('/api/makes');
     expect(response.statusCode).toBe(200);
-    expect(response).toMatchObject({Make_Name: 'Toyota'});
+    expect(response).toMatchObject({ Make_Name: 'Toyota' });
   });
 });
 
@@ -33,7 +33,7 @@ describe('get /models/mazda/2018', () => {
   it('responds with json', async () => {
     const response = await request(app).get('/api/make/mazda/year/2018');
     expect(response.statusCode).toBe(200);
-    expect(response).toMatchObject({ Make_Name: 'MX-5'})
+    expect(response).toMatchObject({ Make_Name: 'MX-5' });
   });
 });
 /**
