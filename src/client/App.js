@@ -3,10 +3,12 @@ import './app.css';
 import ReactImage from './react.png';
 
 export default class App extends Component {
-  state = { username: null };
+  state = { 
+    
+  };
 
   componentDidMount() {
-    fetch('/api/getUsername')
+    fetch('/api/makes')
       .then(res => res.json())
       .then(user => this.setState({ username: user.username }));
   }
