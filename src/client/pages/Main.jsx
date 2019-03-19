@@ -149,7 +149,7 @@ class Main extends React.Component {
         if (result.data.message === 'model found') {
           const age = currentYear - year;
           const finalValue = getFinalValue(initialValue, numberOfOwners, age, mileage, collisions);
-          this.setState({ finalValue, error: '' });
+          this.setState({ finalValue, error: '', submitted: true });
         } else {
           this.setState({ error: errorMessage });
         }
@@ -167,7 +167,7 @@ class Main extends React.Component {
         tempValue = this.state.currentYear;
         this.setState({ [name]: tempValue });
       } else {
-        this.setState({ [name]: value });
+        this.setState({ [name]: value, submitted: false });
       }
     }
 
@@ -291,7 +291,7 @@ class Main extends React.Component {
             </button>
             <h2 className="finalValue">
               {
-                (this.state.finalValue > 0 && this.state.error === '')
+                (this.state.finalValue > 0 && this.state.error === '' && this.state.submitted)
                   ? `The deprecated value of your car is $${finalValue}`
                   : null
               }
