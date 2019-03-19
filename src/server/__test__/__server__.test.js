@@ -48,28 +48,4 @@ describe('Test the root path', () => {
         done();
       });
   });
-  /**
- * Testing the path to GET all models for a make by year
- */
-  // it('responds with json', (done) => {
-  //   moxios.stubRequest('/', { make: 'Dodge', model: 'Neon', year: 2019 });
-  //   postMock('/make', { make: 'Dodge', model: 'Neon', year: 2019 })
-  //     .then((response) => {
-  //       console.log(response);
-  //       done();
-  //     });  
-  // expect(response).toMatchObject({ message: 'model found' });
-  // });
-
-  /**
- * Testing the 404 path\
- */
-  // it('It should return a 404 on any other path', (done) => {
-  //   moxios.stubRequest('/drink', 404);
-  //   getMock('/getMeADrink')
-  //     .then((response) => {
-  //       console.log('/drink', response);
-  //       expect(response.status).toBe(404);
-  //     });
-  // });
 });
