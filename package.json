@@ -2,7 +2,7 @@
   "name": "car_evaluator",
   "version": "1.0.0",
   "description": "Car depreciation calculator",
-  "main": "src/server/server.js",
+  "main": "src/server/index.js",
   "scripts": {
     "build": "webpack --mode production",
     "start": "npm run build && node src/server/index.js",
@@ -26,7 +26,8 @@
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "regenerator-runtime": "^0.13.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -48,6 +49,7 @@
     "eslint-plugin-react": "^7.12.1",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.5.0",
     "jest-cli": "^24.5.0",
     "nodemon": "^1.17.3",

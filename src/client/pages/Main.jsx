@@ -208,7 +208,7 @@ class Main extends React.Component {
             <Input
               className="field"
               form={formName}
-              inputType="number"
+              type="number"
               name="year"
               min={1885}
               max={currentYear}
@@ -223,7 +223,7 @@ class Main extends React.Component {
               name="make"
               text="Please Enter the Make of Your Vehicle"
               value={this.state.make}
-              inputType="text"
+              type="text"
               onChange={onChange}
               required={true}
             />
@@ -231,7 +231,7 @@ class Main extends React.Component {
               className="field"
               form={formName}
               name="model"
-              inputType="text"
+              type="text"
               text="Please Enter the Model of Your Vehicle"
               value={this.state.model}
               onChange={onChange}
@@ -240,7 +240,7 @@ class Main extends React.Component {
             <Input
               className="field"
               form={formName}
-              inputType="number"
+              type="number"
               min={0}
               name="initialValue"
               text="What is the initial value of this car?"
@@ -252,7 +252,7 @@ class Main extends React.Component {
               className="field"
               form={formName}
               min={1}
-              inputType="number"
+              type="number"
               name="numberOfOwners"
               text="Enter the number of people who have owned this vehicle"
               value={this.state.numberOfOwners}
@@ -264,7 +264,7 @@ class Main extends React.Component {
               min={0}
               form={formName}
               name="mileage"
-              inputType="number"
+              type="number"
               text="Please enter mileage of the vehicle"
               value={this.state.mileage}
               onChange={onChange}
@@ -275,7 +275,7 @@ class Main extends React.Component {
               form={formName}
               min={0}
               name="collisions"
-              inputType="number"
+              type="number"
               text="How many collisions has this vehicle been in?"
               value={this.state.collisions}
               onChange={onChange}

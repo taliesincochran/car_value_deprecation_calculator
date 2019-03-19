@@ -6,7 +6,7 @@ const Input = (props) => {
     name,
     value,
     onChange,
-    inputType,
+    type,
     text,
     required,
     formName
@@ -23,7 +23,7 @@ const Input = (props) => {
           name={name}
           value={value}
           onChange={onChange}
-          type={inputType}
+          type={type}
           required={required}
           form={formName}
           placeholder={required ? 'Required' : 'Optional'}
@@ -37,7 +37,7 @@ export default Input;
 
 Input.propTypes = {
   required: PropTypes.bool.isRequired,
-  inputType: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   formName: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,

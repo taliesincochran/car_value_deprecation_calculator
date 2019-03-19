@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const path = requier('path');
 
 const outputDirectory = 'dist';
 
@@ -21,7 +20,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
