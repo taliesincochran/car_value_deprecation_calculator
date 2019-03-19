@@ -70,18 +70,15 @@ class Main extends React.Component {
 
       // Find depreciation due to mileage
       const lossMiles = calculateDepreciation(initVal, 1000, localMileage, 150000, 0.2);
-      console.log('lossMiles', lossMiles);
 
       // Find depreciation due to collisions
       const lossCollisions = calculateDepreciation(localInitialValue, 1, localcollisions, 5, 2);
-      console.log('lossCollisions', lossCollisions);
 
       // Find depreciation due to number of owners
       let lossOwners = 0;
       if (numberOfOwners > 2) {
         lossOwners = initVal * 0.25;
       }
-      console.log('lossOwners', lossOwners);
 
       // Find depreciation due to age
       if (age > 10) {
@@ -89,15 +86,12 @@ class Main extends React.Component {
       }
       const ageInMonths = localAge * 12;
       const lossAge = initVal * (ageInMonths * 0.005);
-      console.log('lossAge', lossAge);
 
       // Find the total deprecation of value
-      console.log('initVal', initVal, 'lossAge', lossAge, 'lossCollisions', lossCollisions, 'lossOwners', lossOwners);
       let adjustedValue = initVal - lossAge - lossCollisions - lossMiles - lossOwners;
       if (numberOfOwners === 1) {
         adjustedValue *= 1.1;
       }
-      console.log('All Values', initVal, lossAge, lossCollisions, lossMiles, lossOwners, adjustedValue);
       return adjustedValue;
     }
 
@@ -125,7 +119,6 @@ class Main extends React.Component {
       }
       for (let i = 0; i < tempCauseValue; i += step) {
         tempValue *= (1 - percentage / 100);
-        console.log(value, tempValue, (1 - percentage / 100));
       }
       return value - tempValue;
     }
@@ -153,7 +146,6 @@ class Main extends React.Component {
         model,
         year
       }).then((result) => {
-        console.log(result);
         if (result.data.message === 'model found') {
           const age = currentYear - year;
           const finalValue = getFinalValue(initialValue, numberOfOwners, age, mileage, collisions);
