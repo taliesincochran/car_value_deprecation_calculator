@@ -157,7 +157,7 @@ class Main extends React.Component {
         if (result.data.message === 'model found') {
           const age = currentYear - year;
           const finalValue = getFinalValue(initialValue, numberOfOwners, age, mileage, collisions);
-          this.setState({ finalValue, submitted: true });
+          this.setState({ finalValue });
         } else {
           this.setState({ error: errorMessage });
         }
@@ -299,7 +299,7 @@ class Main extends React.Component {
             </button>
             <h2 className="finalValue">
               {
-                this.state.submitted
+                this.state.finalValue > 0
                   ? `The deprecated value of your car is $${finalValue}`
                   : null
               }
