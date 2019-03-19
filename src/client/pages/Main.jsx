@@ -151,8 +151,10 @@ class Main extends React.Component {
           const finalValueUnrounded = getFinalValue(initialValue, numberOfOwners, age, mileage, collisions);
           const finalValue = finalValueUnrounded.toFixed(2);
           this.setState({ finalValue, error: '', submitted: true });
-        } else {
+        } else if (result.status === 404) {
           this.setState({ error: errorMessage });
+        } else {
+          this.setState({ error: 'There seems to be a server problem. Please try again later.' });
         }
       }).catch((err) => {
         if (err) {

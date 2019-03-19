@@ -19,22 +19,24 @@ module.exports = (router = new Router()) => {
       console.log(data.data);
       let models;
       if (data.data.Results.length > 0) {
-        models = data.data.Results.map(modelObject => modelObject.Make_Name.toLowerCase());
+        models = data.data.Results.map(modelObject => modelObject.Model_Name.toLowerCase());
       } else {
         models = [];
       }
       return models;
     }).then((models) => {
-      if (models.indexOf(model.toLowerCase() !== -1)) {
-        console.log('model found');
+      let tempModel = model.toLowerCase();
+      console.log(models, tempModel, models.indexOf(tempModel));
+      if (models.indexOf(tempModel) !== -1) {
+        console.log(model, ' found');
         res.send({ message: 'model found' });
       } else {
         console.log({ message: 'model not found' });
-        res.send(404);
+        res.sendStatus(404);
       }
     }).catch((err) => {
       console.log('error', err);
-      res.send(err);
+      res.sendStaus(500);
     });
   });
   router.get('*', (req, res) => {
