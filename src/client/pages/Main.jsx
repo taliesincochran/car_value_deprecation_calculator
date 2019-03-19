@@ -157,7 +157,7 @@ class Main extends React.Component {
         if (result.data.message === 'model found') {
           const age = currentYear - year;
           const finalValue = getFinalValue(initialValue, numberOfOwners, age, mileage, collisions);
-          this.setState({ finalValue });
+          this.setState({ finalValue, submitted: true });
         } else {
           this.setState({ error: errorMessage });
         }
