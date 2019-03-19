@@ -1,24 +1,15 @@
-import React, { Component } from 'react';
-import './app.css';
-import ReactImage from './react.png';
+import * as React from 'react';
+import Main from './pages/Main';
 
-export default class App extends Component {
-  state = { 
-    
-  };
+require('./assets/scss/main.scss');
 
-  componentDidMount() {
-    fetch('/api/makes')
-      .then(res => res.json())
-      .then(user => this.setState({ username: user.username }));
-  }
-
+// eslint-disable-next-line react/prefer-stateless-function
+export default class App extends React.PureComponent {
   render() {
-    const { username } = this.state;
     return (
-      <div>
-        {username ? <h1>{`Hello ${username}`}</h1> : <h1>Loading.. please wait!</h1>}
-        <img src={ReactImage} alt="react" />
+      <div id="main">
+        <h1 id="header">Car Deprecation Calculator</h1>
+        <Main formName="carDeprecation" />
       </div>
     );
   }

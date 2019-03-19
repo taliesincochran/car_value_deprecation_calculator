@@ -1,0 +1,130 @@
+	form {
+		overflow:auto;
+		padding: 10px;
+		border: 5px solid white;
+		margin-bottom: 10px;
+		.smallBox {
+			overflow:auto;
+			border-bottom:1px solid white;
+			margin: auto 0;
+		}
+		.infoBox {
+			overflow:auto;
+			padding: 10px;
+			border: 5px solid white;
+			margin-bottom: 50px;
+		}
+		.field {
+			margin: 0 0 (_size(element-margin) * 1) 0;
+
+			&.half {
+				width: 49%;
+				float: left;
+				padding: 0 0 0 (_size(element-margin) * 1 * 0.5);
+
+				&.first {
+					padding: 0 (_size(element-margin) * 1 * 0.5) 0 0;
+					margin-left: 2px;
+				}
+			}
+		}
+		.float-left {
+			float: left;
+		}
+
+		> .actions {
+			margin: (_size(element-margin) * 1.25) 0 0 0 !important;
+		}
+
+		@include breakpoint(small) {
+			.field {
+				margin: 0 0 (_size(element-margin) * 0.75) 0;
+
+				&.half {
+					padding: 0 0 0 (_size(element-margin) * 0.75 * 0.5);
+
+					&.first {
+						padding: 0 (_size(element-margin) * 0.75 * 0.5) 0 0;
+					}
+				}
+			}
+
+			> .actions {
+				margin: (_size(element-margin) * 1) 0 0 0 !important;
+			}
+		}
+
+		@include breakpoint(xsmall) {
+			.field {
+				&.half {
+					width: 100%;
+					float: none;
+					padding: 0;
+
+					&.first {
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+
+	label {
+		color: _palette(fg-alt);
+		display: block;
+		font-size: 0.8em;
+		font-weight: _font(weight-bold);
+		letter-spacing: _font(letter-spacing-alt);
+		margin: 0 0 (_size(element-margin) * 0.5) (_size(element-margin) * 0.5);
+		text-transform: uppercase;
+	}
+
+	input[type="text"],
+	input[type="number"] {
+		@include vendor('appearance', 'none');
+		background: _palette(border-bg);
+		color: _palett(fg-alt);
+		border: none;
+		border-radius: 0;
+		color: inherit;
+		display: block;
+		outline: 0;
+		padding: 0 1em;
+		text-decoration: none;
+		height: 50px;
+
+		&:invalid {
+			box-shadow: none;
+			height: _size(element-height);
+		}
+
+		&:focus {
+			border-color: _palette(fg-light);
+			box-shadow: 0 0 0 2px _palette(highlight);
+		}
+	}
+
+	::-webkit-input-placeholder {
+		color: _palette(fg-light) !important;
+		opacity: 1.0;
+	}
+
+	:-moz-placeholder {
+		color: _palette(fg-light) !important;
+		opacity: 1.0;
+	}
+
+	::-moz-placeholder {
+		color: _palette(fg-light) !important;
+		opacity: 1.0;
+	}
+
+	:-ms-input-placeholder {
+		color: _palette(fg-light) !important;
+		opacity: 1.0;
+	}
+
+	.formerize-placeholder {
+		color: _palette(fg-light) !important;
+		opacity: 1.0;
+	}

@@ -6,3 +6,24 @@ body {
   text-align: center;
   margin: auto;
 }
+
+form {
+  margin: auto 0;
+  background: black;
+}
+
+input {
+  background: grey;
+  font-family: sans-serif;
+  padding: 10px;
+  width: 80vp;
+  flex-flow: column;
+}
+
+first {
+  padding-top: 20px;
+}
+
+last {
+  padding-bottom: 20px;
+}
