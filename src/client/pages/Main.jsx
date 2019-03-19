@@ -167,7 +167,12 @@ class Main extends React.Component {
         tempValue = this.state.currentYear;
         this.setState({ [name]: tempValue });
       } else {
-        this.setState({ [name]: value, submitted: false });
+        this.setState({
+          [name]: value,
+          submitted: false,
+          error: '',
+          finalValue: 0
+        });
       }
     }
 
